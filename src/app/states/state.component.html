@@ -1,0 +1,9 @@
+<div>
+    <h2>US States</h2>
+    <label *ngIf="isLoading$ | async">Loading...</label>
+    <ul  *ngIf="!(isLoading$ | async)">
+        <li *ngFor="let state of states$ | async" (click)="onStateSelect(state)">
+            {{state.name}}
+        </li>
+    </ul>
+</div>
